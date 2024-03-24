@@ -1,6 +1,6 @@
 from bcc import BPF
 
-program=r"""
+program = r"""
 int hello(void *ctx) {
     bpf_trace_printk("Hello World!");
     return 0;
