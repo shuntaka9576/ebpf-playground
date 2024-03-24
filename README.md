@@ -1,10 +1,9 @@
-# cdk-ec2-template
-
-Wrote a CDK for those times when you just want to dabble in Linux. It's a minimal setup with a public subnet + inbound SSH access restricted to your IP.
+# ebpf-playground
 
 
-## Quick Start(5m)
+## Installation
 
+### CFn
 create stack.
 ```bash
 $ pnpm install
@@ -46,4 +45,12 @@ Warning: Permanently added 'ip' (ED25519) to the list of known hosts.
 
 7 package(s) needed for security, out of 12 available
 Run "sudo yum update" to apply all updates.
+```
+
+### BPF
+
+[ref](https://github.com/iovisor/bcc/blob/master/INSTALL.md#amazon-linux-2---binary)
+
+```bash
+sudo amazon-linux-extras install BCC
 ```
