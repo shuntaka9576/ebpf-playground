@@ -2,7 +2,11 @@ import * as cdk from 'aws-cdk-lib';
 import type { Construct } from 'constructs';
 import { VpcConstruct } from './construct/vpc-construct';
 import { aws_ec2, CfnOutput, RemovalPolicy } from 'aws-cdk-lib';
-import { SubnetType } from 'aws-cdk-lib/aws-ec2';
+import {
+  AmazonLinux2Kernel,
+  AmazonLinuxKernel,
+  SubnetType,
+} from 'aws-cdk-lib/aws-ec2';
 import publicIp from 'public-ip';
 
 interface Props {
@@ -50,6 +54,7 @@ export class EC2TemplateStack extends cdk.Stack {
       ),
       machineImage: new aws_ec2.AmazonLinuxImage({
         generation: aws_ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
+        kernel: AmazonLinuxKernel.KERNEL5_X,
       }),
       keyPair: keyPair,
     });
